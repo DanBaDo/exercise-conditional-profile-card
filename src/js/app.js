@@ -26,7 +26,7 @@ function render(variables = {}) {
   console.log("These are the current variables: ", variables); //print on the console
   // here we ask the logical questions to make decisions on how to build the html
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
-  let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
+  let cover = `<div class="cover"><img src="${variables.background}" alt="dragonfly"/></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
   // reset the website body with the new html output
   let fullName = null;
@@ -34,10 +34,9 @@ function render(variables = {}) {
     fullName = variables.name + " " + variables.lastname;
   else if (variables.name && !variables.lastname) fullName = variables.name;
   else fullName = "Provide at least a name...";
-  //variables.github = null; // Nada de alesanchez
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
-          <img src="${variables.avatarURL}" class="photo" />
+          <img src="${variables.avatarURL}" class="photo" alt="Profile photo"/>
           <h1>${fullName}</h1>
           <h2>${variables.role ? variables.role : "Select your role..."}</h2>
           <h3>
@@ -50,7 +49,7 @@ function render(variables = {}) {
               variables.twitter
                 ? '<a href="https://twitter.com/' +
                   variables.twitter +
-                  '"><img src="/public/assets/img/twitter.png" class="fab fa-twitter"></i></a>'
+                  '"><img src="/public/assets/img/twitter.png" alt="twitter logo" class="fab fa-twitter"></i></a>'
                 : ""
             }
             </li>
@@ -59,7 +58,7 @@ function render(variables = {}) {
               variables.github
                 ? '<a href="https://github.com/' +
                   variables.github +
-                  '"><img src="/public/assets/img/github.png" class="fab fa-twitter"></i></a>'
+                  '"><img src="/public/assets/img/github.png" alt="github logo" class="fab fa-twitter"></i></a>'
                 : ""
             }
             </li>
@@ -68,7 +67,7 @@ function render(variables = {}) {
               variables.linkedin
                 ? '<a href="https://linkedin.com/' +
                   variables.linkedin +
-                  '"><img src="/public/assets/img/linkedin.png" class="fab fa-twitter"></i></a>'
+                  '"><img src="/public/assets/img/linkedin.png" alt="linkedin logo" class="fab fa-twitter"></i></a>'
                 : ""
             }
             </li>
@@ -77,7 +76,7 @@ function render(variables = {}) {
               variables.instagram
                 ? '<a href="https://instagram.com/' +
                   variables.instagram +
-                  '"><img src="/public/assets/img/instagram.png" class="fab fa-twitter"></i></a>'
+                  '"><img src="/public/assets/img/instagram.png" alt="instagram logo" class="fab fa-twitter"></i></a>'
                 : ""
             }
             </li>
