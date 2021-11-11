@@ -87,16 +87,26 @@
   color: #fff;
   cursor: pointer;
   text-align: center;
-  border-bottom: 1px solid #2cd5ca;
-  transition: background-color 0.3s;
+  /*border-bottom: 1px solid #2cd5ca;
+  transition: background-color 0.3s;*/
 }
-.widget ul li:hover > a {
+/*.widget ul li:hover > a {
   background-color: #2cd5ca;
-}
+}*/
 .widget ul li:first-child > a {
   border-radius: 0 3px 0 0;
 }
 .widget ul li:last-child > a {
   border: none;
   border-radius: 0 0 3px 0;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+}
+
+.fab {
+  max-width: 30px;
 }
